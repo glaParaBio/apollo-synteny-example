@@ -67,7 +67,7 @@ done
 ```
 
 Add evidence tracks. First get the ID of the assemblies, then assign the GFF,
-syntheny and ISOseq files to the corresponding assembly IDs.
+synteny and ISOseq files to the corresponding assembly IDs.
 
 
 ```
@@ -150,11 +150,11 @@ rm data/config.json
 
 On your web browser navigate to http://localhost, login as Guest, then:
 
-* From drop down menu select *Linear syntheny view*, then click *Launch view*
+* From drop down menu select *Linear synteny view*, then click *Launch view*
 
-* Fill-in the syntheny form and click launch once done, it should look like:
+* Fill-in the synteny form and click launch once done, it should look like:
 
-![load_syntheny](screenshots/load_syntheny.png)
+![load_synteny](screenshots/load_synteny.png)
 
 * Navigate to region (`[rev]` instructs Apollo to show this track in reverse):
 

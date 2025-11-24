@@ -1,8 +1,8 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Setup required programs](#setup-required-programs)
-* [Prepare reference genomes for syntheny](#prepare-reference-genomes-for-syntheny)
-* [Prepare syntheny tracks](#prepare-syntheny-tracks)
+* [Prepare reference genomes for synteny](#prepare-reference-genomes-for-synteny)
+* [Prepare synteny tracks](#prepare-synteny-tracks)
 * [Prepare reference annotation](#prepare-reference-annotation)
 * [Prepare reference for Apollo](#prepare-reference-for-apollo)
 
@@ -25,9 +25,9 @@ mkdir -p jbrowse_data
 cp isoseq/TTRE_all_isoseq.chr2.bam isoseq/TTRE_all_isoseq.chr2.bam.bai jbrowse_data/
 ```
 
-# Prepare reference genomes for syntheny
+# Prepare reference genomes for synteny
 
-*NB:* For the syntheny tracks we use the masked genomes since they improve
+*NB:* For the synteny tracks we use the masked genomes since they improve
 blast performance.
 
 ```
@@ -42,7 +42,7 @@ gunzip trichuris_suis.PRJNA179528.WBPS19.genomic_masked.fa.gz trichuris_muris.PR
 cd -
 ```
 
-# Prepare syntheny tracks
+# Prepare synteny tracks
 
 Prepare blast database for *T. muris*, only for chromosome `TMUE_LG2`:
 
