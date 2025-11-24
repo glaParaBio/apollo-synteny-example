@@ -127,3 +127,4 @@ do
     samtools faidx data/${fa}.gz
 done
 ```
+

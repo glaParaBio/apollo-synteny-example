@@ -171,5 +171,5 @@ TTRE_chr2:22203142-22215620[rev]
 
 # Loading to Apollo staging server
 
-See [load_staging_server.md](load_staging_server.md)
+See [load demo server](load_demo_server.md)
 
