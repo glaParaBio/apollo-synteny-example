@@ -133,4 +133,4 @@ rm data/config.json
 
 # Visualise tracks
 
-Go to the [Apollo demo instance](https://demo-staging.apollo.jbrowse.org) and follow the same steps as for the [local demo](load_local_apollo#visualise-tracks)
+Go to the [Apollo demo instance](https://demo-staging.apollo.jbrowse.org) and follow the same steps as for the [local demo](load_local_apollo.md#visualise-tracks)
