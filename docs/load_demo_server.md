@@ -3,6 +3,7 @@
 * [Copy reference genomes and evidence to Apollo server](#copy-reference-genomes-and-evidence-to-apollo-server)
 * [Add assemblies](#add-assemblies)
 * [Add evidence tracks](#add-evidence-tracks)
+* [Import annotation](#import-annotation)
 * [Visualise tracks](#visualise-tracks)
 
 <!-- vim-markdown-toc -->
@@ -110,13 +111,6 @@ jbrowse add-track \
   --force \
   --out data/config.json
 
-jbrowse add-track \
-  data/trichuris_trichiura.PRJEB535.WBPS19.annotations.gff3 \
-  --load inPlace \
-  --name "T. trichiura GFF3" \
-  --assemblyNames "${TRICHIURA_ID}" \
-  --force \
-  --out data/config.json
 
 ## Evidence bam
 jbrowse add-track \
@@ -129,6 +123,17 @@ jbrowse add-track \
 
 apollo jbrowse set-config /data/config.json
 rm data/config.json
+```
+
+# Import annotation
+
+This may take about 1/2 hour - 1 hour:
+
+```
+apollo feature import \
+    --assembly "Trichuris trichiura" \
+    --delete-existing \
+    /data/trichuris_trichiura.PRJEB535.WBPS19.annotations.gff3
 ```
 
 # Visualise tracks
