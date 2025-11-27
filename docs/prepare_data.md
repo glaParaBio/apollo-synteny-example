@@ -8,9 +8,21 @@
 
 <!-- vim-markdown-toc -->
 
+The instructions here assume you have downloaded the
+[apollo-synteny-example](https://github.com/glaParaBio/apollo-synteny-example)
+repository and changed directory to the root of the repository. For example,
+you have done:
+
+```
+git clone https://github.com/glaParaBio/apollo-synteny-example
+cd apollo-synteny-example
+```
+
 # Setup required programs
 
-Install the programs in [requirements.txt](../requirements.txt) using your favourite method. Most likely, version numbers do not need to match exactly. Here we use conda:
+Install the programs in [requirements.txt](../requirements.txt) using your
+favourite method. Most likely, version numbers do not need to match exactly.
+Here we use [conda](https://docs.conda.io/projects/conda/en/latest/index.html):
 
 ```
 conda create -n apollo-synteny-example
@@ -71,6 +83,8 @@ Run tblastx and process the blast output to:
 
 * Reformat blast tabular output to paf format.
 
+For the *T. trichiura* vs *T. muris* synteny:
+
 ```
 BLAST_FMT='qaccver qlen qstart qend sstrand saccver slen sstart send nident pident'
 EVALUE=0.01
@@ -83,7 +97,11 @@ tblastx -query blast/TTRE_chr2.fa \
            -outfmt "6 ${BLAST_FMT}" \
 | awk -v offset=22197000 -v qlen=29164577 -v pident=$PIDENT -v OFS='\t' '$11 > pident {$2=qlen; $3=$3+offset-1; $4=$4+offset-1; print}' \
 | ./scripts/blast2paf.py > jbrowse_data/TTRE_chr2_vs_TMUE_LG2.paf
+```
 
+and the same for the *T. suis* vs *T. muris* synteny:
+
+```
 tblastx -query blast/T_suis-1.0_Cont18.fa \
            -db blast/TMUE_LG2.fa \
            -evalue $EVALUE \
@@ -95,7 +113,9 @@ tblastx -query blast/T_suis-1.0_Cont18.fa \
 
 # Prepare reference annotation
 
-Get gff3 files and remove non-CDS records with the same ID
+Get gff3 files and keep only feature types of interest (see also Apollo3 issue
+[#577](https://github.com/GMOD/Apollo3/issues/577) about non-CDS records with
+the same ID):
 
 ```
 for url in \
@@ -112,7 +132,7 @@ done
 
 # Prepare reference for Apollo
 
-Prepare reference for Apollo:
+Get genome reference sequences and index them:
 
 ```
 mkdir -p data
@@ -128,3 +148,4 @@ do
 done
 ```
 
+Now you can proceed to load these data [locally](load_local_apollo.md) or on the [demo server](load_demo_server.md)
