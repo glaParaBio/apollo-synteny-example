@@ -111,6 +111,11 @@ tblastx -query blast/T_suis-1.0_Cont18.fa \
 | ./scripts/blast2paf.py > jbrowse_data/T_suis-1.0_Cont18_vs_TMUE_LG2.paf
 ```
 
+Remember that synteny and evidence files must be where JBrowse can find them,
+i.e. in `jbrowse_data` directory in this setup. You can still use the graphical
+interface to load files from anywhere on your computer but these tracks will be
+lost if you refresh the Apollo page.
+
 # Prepare reference annotation
 
 Get gff3 files and keep only feature types of interest (see also Apollo3 issue

@@ -8,6 +8,13 @@
 
 <!-- vim-markdown-toc -->
 
+These instructions assume you have prepared data files as per
+[prepare_data.md](prepare_data.md) and you are at the root of the repository, *i.e.*:
+
+```
+cd /path/to/apollo-synteny-example
+```
+
 # Copy reference genomes and evidence to Apollo server
 
 ```
@@ -21,7 +28,6 @@ scp jbrowse_data/* ec2-user@${dns}:~/deployment/data-staging/
 # Add assemblies
 
 ```
-
 aws ec2-instance-connect ssh --instance-id ${INSTANCE_ID}
 
 function apollo() {

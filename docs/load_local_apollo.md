@@ -1,24 +1,39 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Setup local Apollo](#setup-local-apollo)
+* [Install CLI tools and configure access to Apollo](#install-cli-tools-and-configure-access-to-apollo)
 * [Loading reference](#loading-reference)
 * [Visualise tracks](#visualise-tracks)
 * [Loading to Apollo staging server](#loading-to-apollo-staging-server)
 
 <!-- vim-markdown-toc -->
 
+These instructions assume you have prepared data files as per
+[prepare_data.md](prepare_data.md) and you are at the root of the repository, *i.e.*:
+
+```
+cd /path/to/apollo-synteny-example
+```
+
 # Setup local Apollo
 
 See the official Apollo documentation to setup a [local
 demo](https://apollo.jbrowse.org/docs/try-it-out/local-demo/setting-up).
 Assuming you have `docker` and `docker compose` available on your system, the
-instructions here below should suffice but they may be out of date.
+instructions here below should suffice but they may become out of date.
 
 Start Apollo
 
 ```
 docker compose up
 ```
+
+You should see a stream of logs, so open a new terminal window.
+
+# Install CLI tools and configure access to Apollo
+
+The use cli is not strictly necessayr since you can load data using the
+graphical interface. However, the cli streamlines the process.
 
 Install the Apollo and jbrowse command line tools (see the Apollo documentation
 for alternatives to `npm`):
